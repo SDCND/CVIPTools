@@ -82,7 +82,8 @@ namespace CVIPGUI.Analysis
                     File.Delete(dlgFileSave.FileName);
                 }
 
-                Excel.ApplicationClass app = new Microsoft.Office.Interop.Excel.ApplicationClass();
+                //Excel.ApplicationClass app = new Microsoft.Office.Interop.Excel.ApplicationClass();
+                Excel.Application app = new Microsoft.Office.Interop.Excel.Application();
                 Excel.Worksheet sheet = new Microsoft.Office.Interop.Excel.Worksheet();
                 Excel.Workbook book = null;
                 try

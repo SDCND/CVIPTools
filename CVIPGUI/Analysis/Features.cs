@@ -771,7 +771,8 @@ namespace CVIPGUI.Analysis
                     return;
                 File.Delete(textSheet);
             }
-            Excel.ApplicationClass app = new Microsoft.Office.Interop.Excel.ApplicationClass();
+            //Excel.ApplicationClass app = new Microsoft.Office.Interop.Excel.ApplicationClass();
+            Excel.Application app = new Microsoft.Office.Interop.Excel.Application();
             Excel.Workbook book = app.Workbooks.Open(excelSheet, 0, true, 5, "", "", true, Microsoft.Office.Interop.Excel.XlPlatform.xlWindows, "\t", false, false, 0, true, 1, 0); ;
             Excel.Worksheet sheet = (Excel.Worksheet)book.Worksheets.get_Item(1);
             try
