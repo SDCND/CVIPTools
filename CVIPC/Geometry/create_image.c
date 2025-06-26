@@ -179,6 +179,7 @@ Image	*create_ellipse(	int	width,
 }
 
 Image *create_circle(int width, int height,int centerx,int centery,int radius) {
+	//MessageBoxA(NULL, "create_circle - NICHT VERGESSEN: D:\Dokumente\GitHub\CVIPTools\bin>regsvr32 CVIPtools.dll", "DEBUG HIT", MB_OK);
 	Image *outputImage;
 	outputImage = create_black(width, height);
 	paint_circle(outputImage,centerx,centery,radius);
