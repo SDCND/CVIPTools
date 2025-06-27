@@ -1040,11 +1040,11 @@ namespace CVIPGUI.Restoration
             }
         }
 
-        private double Alpha { get { return double.Parse(this.cboAlpha.Text); } }
-        private double CutoffFreq { get { return double.Parse(this.cboCutoffFreq.Text); } }
-        private double Gamma { get { return double.Parse(this.cboGamma.Text); } }
-        private double K { get { return double.Parse(this.cboK.Text); } }
-        private float BlurWeight { get { return float.Parse(this.cboBlurWeight.Text); } }
+        private double Alpha { get { return double.Parse(this.cboAlpha.Text, CultureInfo.InvariantCulture); } }
+        private double CutoffFreq { get { return double.Parse(this.cboCutoffFreq.Text, CultureInfo.InvariantCulture); } }
+        private double Gamma { get { return double.Parse(this.cboGamma.Text, CultureInfo.InvariantCulture); } }
+        private double K { get { return double.Parse(this.cboK.Text, CultureInfo.InvariantCulture); } }
+        private float BlurWeight { get { return float.Parse(this.cboBlurWeight.Text, CultureInfo.InvariantCulture); } }
         private int BlurMethod { get { return this.cboBlurMethod.SelectedIndex + 1; } }
         private Shape BlurShape { get { return (Shape)this.cboBlurShape.SelectedIndex; } }
         private TransformType TransformType { get { return (TransformType)this.cboTransformType.SelectedIndex; } }

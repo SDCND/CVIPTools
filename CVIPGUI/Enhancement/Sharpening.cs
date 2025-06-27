@@ -31,6 +31,7 @@ using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
 using System.Drawing;
+using System.Globalization;
 using System.Text;
 using System.Windows.Forms;
 
@@ -880,22 +881,22 @@ namespace CVIPGUI.Enhancement
             ComboBox cbo = sender as ComboBox;
             if (cbo.Name == "cbSharpening2" && sharpeningSelected == "SharpeningI")
             {
-                float percent = float.Parse(this.cbSharpening2.Text) * 100;
+                float percent = float.Parse(this.cbSharpening2.Text, CultureInfo.InvariantCulture) * 100;
                 lblLowPercent.Text = percent.ToString() + "%";
             }
             else if (cbo.Name == "cbSharpening3" && sharpeningSelected == "SharpeningI")
             {
-                float percent = float.Parse(this.cbSharpening3.Text) * 100;
+                float percent = float.Parse(this.cbSharpening3.Text, CultureInfo.InvariantCulture) * 100;
                 lblHighPercent.Text = percent.ToString() + "%";
             }
             else if (cbo.Name == "cbSharpening3" && sharpeningSelected == "UnsharpMasking")
             {
-                float percent = float.Parse(this.cbSharpening3.Text) * 100;
+                float percent = float.Parse(this.cbSharpening3.Text, CultureInfo.InvariantCulture) * 100;
                 lblLowPercent.Text = percent.ToString() + "%";
             }
             else if (cbo.Name == "cbSharpening4" && sharpeningSelected == "UnsharpMasking")
             {
-                float percent = float.Parse(this.cbSharpening4.Text) * 100;
+                float percent = float.Parse(this.cbSharpening4.Text, CultureInfo.InvariantCulture) * 100;
                 lblHighPercent.Text = percent.ToString() + "%";
             }
         }

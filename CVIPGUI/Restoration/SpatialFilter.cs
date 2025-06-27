@@ -496,13 +496,13 @@ namespace CVIPGUI.Restoration
             this.Cursor = Cursors.Default;
         }
 
-        private double LocalGainFactor { get { return double.Parse(this.cboLocalGain.Text); } }
-        private double LocalGainMax { get { return double.Parse(this.cboLocalGainMax.Text); } }
-        private double LocalGainMin { get { return double.Parse(this.cboLocalGainMin.Text); } }
-        private double LocalMeanFactor { get { return double.Parse(this.cboLocalMean.Text); } }
-        private double NoiseVariance { get { return double.Parse(this.cboNoiseVar.Text); } }
+        private double LocalGainFactor { get { return double.Parse(this.cboLocalGain.Text, CultureInfo.InvariantCulture); } }
+        private double LocalGainMax { get { return double.Parse(this.cboLocalGainMax.Text, CultureInfo.InvariantCulture); } }
+        private double LocalGainMin { get { return double.Parse(this.cboLocalGainMin.Text, CultureInfo.InvariantCulture); } }
+        private double LocalMeanFactor { get { return double.Parse(this.cboLocalMean.Text, CultureInfo.InvariantCulture); } }
+        private double NoiseVariance { get { return double.Parse(this.cboNoiseVar.Text, CultureInfo.InvariantCulture); } }
 
-        private float Threshold { get { return float.Parse(this.cboThreshold.Text); } }
+        private float Threshold { get { return float.Parse(this.cboThreshold.Text, CultureInfo.InvariantCulture); } }
 
         private int BlockSize { get { return int.Parse(this.cboBlockSize.Text); } }
         private int EdgeThreshold { get { return int.Parse(this.cboEdgeThreshold.Text); } }

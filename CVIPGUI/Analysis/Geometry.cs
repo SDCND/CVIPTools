@@ -32,6 +32,7 @@ using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
 using System.Drawing;
+using System.Globalization;
 using System.Text;
 using System.Windows.Forms;
 
@@ -461,9 +462,9 @@ namespace CVIPGUI.Analysis
             }
         }
 
-        private float RotateDegrees { get { return float.Parse(this.cboRotateDegrees.Text); } }
-        private float TranslateGrayLevel { get { return float.Parse(this.cboTranslateGrayLevel.Text); } }
-        private float ZoomFactor { get { return float.Parse(this.cboZoomFactor.Text); } }
+        private float RotateDegrees { get { return float.Parse(this.cboRotateDegrees.Text, CultureInfo.InvariantCulture); } }
+        private float TranslateGrayLevel { get { return float.Parse(this.cboTranslateGrayLevel.Text, CultureInfo.InvariantCulture); } }
+        private float ZoomFactor { get { return float.Parse(this.cboZoomFactor.Text, CultureInfo.InvariantCulture); } }
 
         private int CropCol { get { return int.Parse(this.cboCropCol.Text); } }
         private int CropRow { get { return int.Parse(this.cboCropRow.Text); } }

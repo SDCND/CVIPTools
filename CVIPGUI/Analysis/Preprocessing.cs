@@ -29,6 +29,7 @@ using CVIPGUI.Utilities;
 using System;
 using System.ComponentModel;
 using System.Drawing;
+using System.Globalization;
 using System.Windows.Forms;
 
 namespace CVIPGUI.Analysis
@@ -1080,7 +1081,7 @@ namespace CVIPGUI.Analysis
         private int ZoomRow { get { return int.Parse(this.cboZoomRow.Text); } }
         private int ZoomHeight { get { return int.Parse(this.cboZoomHeight.Text); } }
         private int ZoomWidth { get { return int.Parse(this.cboZoomWidth.Text); } }
-        private float ZoomFactor { get { return float.Parse(this.cboZoomFactor.Text); } }
+        private float ZoomFactor { get { return float.Parse(this.cboZoomFactor.Text, CultureInfo.InvariantCulture); } }
         private int SpatialQuantMethod { get { return this.cboSpatialQuantMethod.SelectedIndex + 1; } }
 
 
@@ -1163,8 +1164,8 @@ namespace CVIPGUI.Analysis
 
         private int LowLimit { get { return int.Parse(this.cboLowLimit.Text); } }
         private int HighLimit { get { return int.Parse(this.cboHighLimit.Text); } }
-        private float LowClip { get { return float.Parse(this.cboLowClip.Text); } }
-        private float HighClip { get { return float.Parse(this.cboHighClip.Text); } }
+        private float LowClip { get { return float.Parse(this.cboLowClip.Text, CultureInfo.InvariantCulture); } }
+        private float HighClip { get { return float.Parse(this.cboHighClip.Text, CultureInfo.InvariantCulture); } }
 
         private int MaskSize
         {
@@ -1215,12 +1216,12 @@ namespace CVIPGUI.Analysis
             ComboBox cbo = sender as ComboBox;
             if(cbo.Name == "cboLowClip")
             {
-                float percent = float.Parse(this.cboLowClip.Text) * 100;
+                float percent = float.Parse(this.cboLowClip.Text, CultureInfo.InvariantCulture) * 100;
                 lblLowPercent.Text = percent.ToString() + "%";
             }
             else
             {
-                float percent = float.Parse(this.cboHighClip.Text) * 100;
+                float percent = float.Parse(this.cboHighClip.Text, CultureInfo.InvariantCulture) * 100;
                 lblHighPercent.Text = percent.ToString() + "%";
             }
         }

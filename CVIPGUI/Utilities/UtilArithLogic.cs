@@ -30,6 +30,7 @@ using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
 using System.Drawing;
+using System.Globalization;
 using System.Text;
 using System.Windows.Forms;
 
@@ -302,7 +303,7 @@ namespace CVIPGUI.Utilities
             }
         }
 
-        private float MultConstant { get { return float.Parse(this.cboMultConstant.Text); } }
+        private float MultConstant { get { return float.Parse(this.cboMultConstant.Text, CultureInfo.InvariantCulture); } }
 
         private void grpArithLogic_Enter(object sender, EventArgs e)
         {

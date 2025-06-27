@@ -27,8 +27,9 @@
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
-using System.Drawing;
 using System.Data;
+using System.Drawing;
+using System.Globalization;
 using System.Linq;
 using System.Text;
 using System.Windows.Forms;
@@ -258,8 +259,8 @@ namespace CVIPGUI.Compression
         private int MaskSize { get { return int.Parse(this.cbMaskSize.Text); } }
         private int LowLimit { get { return int.Parse(this.cbLowLimit.Text); } }
         private int HighLimit { get { return int.Parse(this.cbHighLimit.Text); } }
-        private float LowClip { get { return float.Parse(this.cbLowClip.Text); } }
-        private float HighClip { get { return float.Parse(this.cbHighClip.Text); } }
+        private float LowClip { get { return float.Parse(this.cbLowClip.Text, CultureInfo.InvariantCulture); } }
+        private float HighClip { get { return float.Parse(this.cbHighClip.Text, CultureInfo.InvariantCulture); } }
         private int EqBand
         {
             get
@@ -305,12 +306,12 @@ namespace CVIPGUI.Compression
             ComboBox cbo = sender as ComboBox;
             if (cbo.Name == "cbLowClip")
             {
-                float percent = float.Parse(this.cbLowClip.Text) * 100;
+                float percent = float.Parse(this.cbLowClip.Text, CultureInfo.InvariantCulture) * 100;
                 lblLowPercent.Text = percent.ToString() + "%";
             }
             else
             {
-                float percent = float.Parse(this.cbHighClip.Text) * 100;
+                float percent = float.Parse(this.cbHighClip.Text, CultureInfo.InvariantCulture) * 100;
                 lblHighPercent.Text = percent.ToString() + "%";
             }
         }

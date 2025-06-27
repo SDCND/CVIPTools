@@ -779,7 +779,7 @@ namespace CVIPGUI.Analysis
             }
         }
 
-        private double EmphasisOffset { get { return double.Parse(this.cboEmphasisOffset.Text); } }
+        private double EmphasisOffset { get { return double.Parse(this.cboEmphasisOffset.Text, CultureInfo.InvariantCulture); } }
 
         private int CutoffFreq { get { return int.Parse(this.cboCutoff.Text); } }
         private int CutoffFreqHigh { get { return int.Parse(this.cboCutoffHigh.Text); } }

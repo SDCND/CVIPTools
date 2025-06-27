@@ -270,10 +270,10 @@ namespace CVIPGUI.Restoration
             this.Cursor = Cursors.Default;
         }
 
-        private double Mean { get { return double.Parse(this.cboMean.Text); } }
-        private double Pepper { get { return double.Parse(this.cboPepper.Text); } }
-        private double Salt { get { return double.Parse(this.cboSalt.Text); } }
-        private double Variance { get { return double.Parse(this.cboVariance.Text); } }
+        private double Mean { get { return double.Parse(this.cboMean.Text, CultureInfo.InvariantCulture); } }
+        private double Pepper { get { return double.Parse(this.cboPepper.Text, CultureInfo.InvariantCulture); } }
+        private double Salt { get { return double.Parse(this.cboSalt.Text, CultureInfo.InvariantCulture); } }
+        private double Variance { get { return double.Parse(this.cboVariance.Text, CultureInfo.InvariantCulture); } }
 
         private int Alpha { get { return int.Parse(this.cboAlpha.Text); } }
         private int ImageHeight { get { return int.Parse(this.cboHeight.Text); } }

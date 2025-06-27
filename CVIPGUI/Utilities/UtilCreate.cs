@@ -824,10 +824,10 @@ namespace CVIPGUI.Utilities
             }
         }
 
-        public double Mean { get { return double.Parse(this.cboMean.Text); } }
-        public double Pepper { get { return double.Parse(this.cboPepper.Text); } }
-        public double Salt { get { return double.Parse(this.cboSalt.Text); } }
-        public double Variance { get { return double.Parse(this.cboVariance.Text); } }
+        public double Mean { get { return double.Parse(this.cboMean.Text, CultureInfo.InvariantCulture); } }
+        public double Pepper { get { return double.Parse(this.cboPepper.Text, CultureInfo.InvariantCulture); } }
+        public double Salt { get { return double.Parse(this.cboSalt.Text, CultureInfo.InvariantCulture); } }
+        public double Variance { get { return double.Parse(this.cboVariance.Text, CultureInfo.InvariantCulture); } }
 
         public int Alpha { get { return int.Parse(this.cboAlpha.Text); } }
         public int BlurRadius { get { return int.Parse(this.cboBlurRadiusCircle.Text); } }

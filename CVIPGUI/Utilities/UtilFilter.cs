@@ -32,6 +32,7 @@ using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
 using System.Drawing;
+using System.Globalization;
 using System.Text;
 using System.Windows.Forms;
 
@@ -648,7 +649,7 @@ namespace CVIPGUI.Utilities
             }
         }
 
-        private float BlurWeight { get { return float.Parse(this.cboBlurWeight.Text); } }
+        private float BlurWeight { get { return float.Parse(this.cboBlurWeight.Text, CultureInfo.InvariantCulture); } }
         private int BlurMethod { get { return this.cboBlurMethod.SelectedIndex + 1; } }
         private Shape BlurShape { get { return (Shape)this.cboBlurShape.SelectedIndex; } }
 

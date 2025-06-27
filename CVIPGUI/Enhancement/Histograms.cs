@@ -508,19 +508,19 @@ namespace CVIPGUI.Enhancement
             }
         }
 
-        private double StartVal { get { return double.Parse(this.cboStartVal.Text); } }
-        private double EndVal { get { return double.Parse(this.cboEndVal.Text); } }
-        private double InitialVal { get { return double.Parse(this.cboInitialVal.Text); } }
-        private double Slope { get { return double.Parse(this.cboSlope.Text); } }
-        private double LocalGainFactor { get { return double.Parse(this.cboLocalGainFactor.Text); } }
-        private double LocalGainMin { get { return double.Parse(this.cboLocalGainMin.Text); } }
-        private double LocalGainMax { get { return double.Parse(this.cboLocalGainMax.Text); } }
-        private double LocalMeanFactor { get { return double.Parse(this.cboLocalMeanFactor.Text); } }
-        private float GrayLevelMultFactor { get { return float.Parse(this.cboFactor.Text); } }
-        private float LowClip { get { return float.Parse(this.cboLowClip.Text); } }
-        private float HighClip { get { return float.Parse(this.cboHighClip.Text); } }
+        private double StartVal { get { return double.Parse(this.cboStartVal.Text, CultureInfo.InvariantCulture); } }
+        private double EndVal { get { return double.Parse(this.cboEndVal.Text, CultureInfo.InvariantCulture); } }
+        private double InitialVal { get { return double.Parse(this.cboInitialVal.Text, CultureInfo.InvariantCulture); } }
+        private double Slope { get { return double.Parse(this.cboSlope.Text, CultureInfo.InvariantCulture); } }
+        private double LocalGainFactor { get { return double.Parse(this.cboLocalGainFactor.Text, CultureInfo.InvariantCulture); } }
+        private double LocalGainMin { get { return double.Parse(this.cboLocalGainMin.Text, CultureInfo.InvariantCulture); } }
+        private double LocalGainMax { get { return double.Parse(this.cboLocalGainMax.Text, CultureInfo.InvariantCulture); } }
+        private double LocalMeanFactor { get { return double.Parse(this.cboLocalMeanFactor.Text, CultureInfo.InvariantCulture); } }
+        private float GrayLevelMultFactor { get { return float.Parse(this.cboFactor.Text, CultureInfo.InvariantCulture); } }
+        private float LowClip { get { return float.Parse(this.cboLowClip.Text, CultureInfo.InvariantCulture); } }
+        private float HighClip { get { return float.Parse(this.cboHighClip.Text, CultureInfo.InvariantCulture); } }
         private int BlockSize { get { return int.Parse(this.cboBlockSize.Text); } }
-        private double CLAHEClip { get { return double.Parse(this.cboClahe.Text); } }
+        private double CLAHEClip { get { return double.Parse(this.cboClahe.Text, CultureInfo.InvariantCulture); } }
         private int ByteClipping { get { return this.chkByteClipping.Checked ? 1 : 0; } }
         private int KeepDataOOR { get { return this.rbKeepDataOOR.Checked ? 1 : 0; } }
         private int KernelSize { get { return int.Parse(this.cboKernelSize.Text); } }
@@ -570,17 +570,17 @@ namespace CVIPGUI.Enhancement
             ComboBox cbo = sender as ComboBox;
             if (cbo.Name == "cboLowClip")
             {
-                float percent = float.Parse(this.cboLowClip.Text) * 100;
+                float percent = float.Parse(this.cboLowClip.Text, CultureInfo.InvariantCulture) * 100;
                 lblLowPercent.Text = percent.ToString() + "%";
             }
             else if(cbo.Name == "cboHighClip")
             {
-                float percent = float.Parse(this.cboHighClip.Text) * 100;
+                float percent = float.Parse(this.cboHighClip.Text, CultureInfo.InvariantCulture) * 100;
                 lblHighPercent.Text = percent.ToString() + "%";
             }
             else
             {
-                float percent = float.Parse(this.cboClahe.Text) * 100;
+                float percent = float.Parse(this.cboClahe.Text, CultureInfo.InvariantCulture) * 100;
                 lblCLAHEPercent.Text = percent.ToString() + "%";
             }
         }

@@ -1878,20 +1878,20 @@ namespace CVIPGUI.Analysis
         private bool Rotate { get { return this.chkRotate.Checked; } }
         private bool RunPCT { get { return this.chkPCT.Checked; } }
 
-        private double Alpha { get { return double.Parse(this.cboAlpha.Text); } }
-        private double Beta { get { return double.Parse(this.cboBeta.Text); } }
-        private double Kappa { get { return double.Parse(this.cboKappa.Text); } }
-        private double Variance { get { return double.Parse(this.cboFuzzyCVariance.Text); } }
-        private double WatershedThreshold { get { return double.Parse(this.cboWatershedThreshold.Text); } }
+        private double Alpha { get { return double.Parse(this.cboAlpha.Text, CultureInfo.InvariantCulture); } }
+        private double Beta { get { return double.Parse(this.cboBeta.Text, CultureInfo.InvariantCulture); } }
+        private double Kappa { get { return double.Parse(this.cboKappa.Text, CultureInfo.InvariantCulture); } }
+        private double Variance { get { return double.Parse(this.cboFuzzyCVariance.Text, CultureInfo.InvariantCulture); } }
+        private double WatershedThreshold { get { return double.Parse(this.cboWatershedThreshold.Text, CultureInfo.InvariantCulture); } }
         private double Param1
         {
             get
             {
                 double param1 = 0.0;
                 if (this.rbVariance.Checked || this.rbWeightedGrayLevel.Checked)
-                    param1 = double.Parse(this.cboThreshold.Text);
+                    param1 = double.Parse(this.cboThreshold.Text, CultureInfo.InvariantCulture);
                 else if (this.rbHomogeneity.Checked)
-                    param1 = double.Parse(this.cboSimilarity.Text);
+                    param1 = double.Parse(this.cboSimilarity.Text, CultureInfo.InvariantCulture);
                 return param1;
             }
         }
@@ -1901,15 +1901,15 @@ namespace CVIPGUI.Analysis
             {
                 double param = 0.0;
                 if (this.rbVariance.Checked)
-                    param = double.Parse(this.cboPercentage.Text);
+                    param = double.Parse(this.cboPercentage.Text, CultureInfo.InvariantCulture);
                 else if (this.rbHomogeneity.Checked)
-                    param = double.Parse(this.cboPixelDistance.Text);
+                    param = double.Parse(this.cboPixelDistance.Text, CultureInfo.InvariantCulture);
                 return param;
             }
         }
 
-        private float AutoThreshLimit { get { return float.Parse(this.cboLimit.Text); } }
-        private float HistThreshTore { get { return float.Parse(this.cbHistThresh.Text); } }
+        private float AutoThreshLimit { get { return float.Parse(this.cboLimit.Text, CultureInfo.InvariantCulture); } }
+        private float HistThreshTore { get { return float.Parse(this.cbHistThresh.Text, CultureInfo.InvariantCulture); } }
         private int BoolFunc { get { return this.cboBoolFunc.SelectedIndex + 1; } }
         private int Connectivity { get { return this.cboSkeletonConnect.SelectedIndex; } }
         private int EntryLevel { get { return int.Parse(this.cboEntryLevel.Text); } }

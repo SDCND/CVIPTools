@@ -345,8 +345,8 @@ namespace CVIPGUI.Analysis
                     this.txtPrattResultGS.Visible = true;
                     Update();
                     string[] tokens = (this.cboScaleFactor.Text + "/1").Split(new char[] { '/' });
-                    double num = double.Parse(tokens[0]);
-                    double dem = double.Parse(tokens[1]);
+                    double num = double.Parse(tokens[0], CultureInfo.InvariantCulture);
+                    double dem = double.Parse(tokens[1], CultureInfo.InvariantCulture);
                     double[] result = CvipOp.Pratt_Merit(idealImage, edgeDetectImage, num / dem);
                     if (result.Length == 1)
                         this.txtPrattResultGS.Text = result[0].ToString("0.000000");
@@ -1018,13 +1018,13 @@ namespace CVIPGUI.Analysis
         private bool ShowIntermediateImages { get { return this.chkShowImages.Checked; } }
         private bool ThinningEdge { get { return this.chkThinEdge.Checked; } }
 
-        private double SmoothingFactor { get { return double.Parse(this.cboSmoothingFactor.Text); } }
+        private double SmoothingFactor { get { return double.Parse(this.cboSmoothingFactor.Text, CultureInfo.InvariantCulture); } }
 
-        private float HarrisAlpha { get { return float.Parse(this.cboHarrisAlpha.Text); } }
-        private float HarrisMinDistance { get { return float.Parse(this.cboHarrisMinDistance.Text); } }
-        private float MarrDelta { get { return float.Parse(this.cboMarrDelta.Text); } }
-        private float MarrSigma { get { return float.Parse(this.cboMarrSigma.Text); } }
-        private float MoravecThreshold { get { return float.Parse(this.cboMoravecThreshold.Text); } }
+        private float HarrisAlpha { get { return float.Parse(this.cboHarrisAlpha.Text, CultureInfo.InvariantCulture); } }
+        private float HarrisMinDistance { get { return float.Parse(this.cboHarrisMinDistance.Text, CultureInfo.InvariantCulture); } }
+        private float MarrDelta { get { return float.Parse(this.cboMarrDelta.Text, CultureInfo.InvariantCulture); } }
+        private float MarrSigma { get { return float.Parse(this.cboMarrSigma.Text, CultureInfo.InvariantCulture); } }
+        private float MoravecThreshold { get { return float.Parse(this.cboMoravecThreshold.Text, CultureInfo.InvariantCulture); } }
 
         private int DeltaLength { get { return int.Parse(this.cboDeltaLength.Text); } }
         private int HarrisBorder { get { return int.Parse(this.cboHarrisBorder.Text); } }
@@ -1078,13 +1078,13 @@ namespace CVIPGUI.Analysis
                 switch (this.currentSelection)
                 {
                     case EdgeDetectSelection.boiecox:
-                        val = double.Parse(this.cboBoieHiThresh.Text);
+                        val = double.Parse(this.cboBoieHiThresh.Text, CultureInfo.InvariantCulture);
                         break;
                     case EdgeDetectSelection.canny:
-                        val = double.Parse(this.cboCannyHiThresh.Text);
+                        val = double.Parse(this.cboCannyHiThresh.Text, CultureInfo.InvariantCulture);
                         break;
                     case EdgeDetectSelection.shencastan:
-                        val = double.Parse(this.cboShenHiThresh.Text);
+                        val = double.Parse(this.cboShenHiThresh.Text, CultureInfo.InvariantCulture);
                         break;
                 }
                 return val;
@@ -1107,13 +1107,13 @@ namespace CVIPGUI.Analysis
                 switch (this.currentSelection)
                 {
                     case EdgeDetectSelection.boiecox:
-                        if (this.DoThreshold) val = double.Parse(this.cboBoieLoThresh.Text);
+                        if (this.DoThreshold) val = double.Parse(this.cboBoieLoThresh.Text, CultureInfo.InvariantCulture);
                         break;
                     case EdgeDetectSelection.canny:
-                        val = double.Parse(this.cboCannyLoThresh.Text);
+                        val = double.Parse(this.cboCannyLoThresh.Text, CultureInfo.InvariantCulture);
                         break;
                     case EdgeDetectSelection.shencastan:
-                        val = double.Parse(this.cboShenLoThresh.Text);
+                        val = double.Parse(this.cboShenLoThresh.Text, CultureInfo.InvariantCulture);
                         break;
                 }
                 return val;
@@ -1150,10 +1150,10 @@ namespace CVIPGUI.Analysis
                 switch (this.currentSelection)
                 {
                     case EdgeDetectSelection.boiecox:
-                        val = double.Parse(this.cboBoieVariance.Text);
+                        val = double.Parse(this.cboBoieVariance.Text, CultureInfo.InvariantCulture);
                         break;
                     case EdgeDetectSelection.canny:
-                        val = double.Parse(this.cboCannyVariance.Text);
+                        val = double.Parse(this.cboCannyVariance.Text, CultureInfo.InvariantCulture);
                         break;
                 }
                 return val;
