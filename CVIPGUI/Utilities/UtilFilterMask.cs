@@ -30,6 +30,7 @@ using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
 using System.Drawing;
+using System.Globalization;
 using System.Text;
 using System.Windows.Forms;
 
@@ -302,7 +303,7 @@ namespace CVIPGUI.Utilities
         {
             double val;
             string text = (string)e.FormattedValue;
-            if (!double.TryParse(text, out val))
+            if (!double.TryParse(text, NumberStyles.Any, CultureInfo.InvariantCulture, out val))
             {
                 MessageBox.Show("Please check the input value. Only doubles are accepted.",
                    "Double Required", MessageBoxButtons.OK, MessageBoxIcon.Warning);

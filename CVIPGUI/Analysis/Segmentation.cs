@@ -33,6 +33,7 @@ using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
 using System.Drawing;
+using System.Globalization;
 using System.Text;
 using System.Windows.Forms;
 
@@ -388,7 +389,7 @@ namespace CVIPGUI.Analysis
         {
             ComboBox cbo = sender as ComboBox;
             double val;
-            if (!double.TryParse(cbo.Text, out val))
+            if (!double.TryParse(cbo.Text, NumberStyles.Any, CultureInfo.InvariantCulture, out val))
             {
                 MessageBox.Show("Please check the input value. Only doubles are accepted.",
                    "Double Required", MessageBoxButtons.OK, MessageBoxIcon.Warning);

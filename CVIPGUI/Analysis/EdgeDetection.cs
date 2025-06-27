@@ -33,6 +33,7 @@ using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
 using System.Drawing;
+using System.Globalization;
 using System.Text;
 using System.Windows.Forms;
 
@@ -536,7 +537,7 @@ namespace CVIPGUI.Analysis
         private void cboSmoothingFactor_Validating(object sender, CancelEventArgs e)
         {
             double val;
-            if (!double.TryParse(this.cboSmoothingFactor.Text, out val))
+            if (!double.TryParse(this.cboSmoothingFactor.Text, NumberStyles.Any, CultureInfo.InvariantCulture, out val))
             {
                 MessageBox.Show("Please check the input value. Only double values are accepted.",
                    "Double Required", MessageBoxButtons.OK, MessageBoxIcon.Warning);
@@ -555,7 +556,7 @@ namespace CVIPGUI.Analysis
         {
             ComboBox cbo = sender as ComboBox;
             double val;
-            if (!double.TryParse(cbo.Text, out val))
+            if (!double.TryParse(cbo.Text, NumberStyles.Any, CultureInfo.InvariantCulture, out val))
             {
                 MessageBox.Show("Please check the input value. Only double values are accepted.",
                    "Double Required", MessageBoxButtons.OK, MessageBoxIcon.Warning);
@@ -586,7 +587,7 @@ namespace CVIPGUI.Analysis
         {
             ComboBox cbo = sender as ComboBox;
             double val;
-            if (!double.TryParse(cbo.Text, out val))
+            if (!double.TryParse(cbo.Text, NumberStyles.Any, CultureInfo.InvariantCulture, out val))
             {
                 MessageBox.Show("Please check the input value. Only double values are accepted.",
                    "Double Required", MessageBoxButtons.OK, MessageBoxIcon.Warning);
